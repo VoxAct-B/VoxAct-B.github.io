@@ -166,3 +166,33 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
+
+
+.collapsible {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+.collapsible::before {
+  content: "\25B6";  /* Right-pointing triangle */
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
+}
+.collapsible.active::before {
+  content: "\25BC";  /* Down-pointing triangle */
+}
+.clp_content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+}
+.active, .collapsible:hover {
+  /*background-color: #555;*/
+}

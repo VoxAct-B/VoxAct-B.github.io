@@ -188,9 +188,9 @@
       <br />
       <div class="columns is-centered">
         <div class="column is-full-width has-text-justified">
-          <h2 class="title is-3">Overview</h2>
+          <h2 class="title is-3 has-text-centered">Overview</h2>
           <br />
-          <img src="./static/images/figure2_v2.png" alt="MAIL schematic">
+          <img src="./static/images/figure2_v2.png" alt="VoxAct-B schematic">
           <p>
             <center>VoxAct-B uses voxel representations and language for 6-DoF bimanual manipulation.</center>
           </p>
@@ -241,48 +241,144 @@
       <br />
       <div class="columns is-centered">
         <div class="column is-full-width">
-          <h2 class="title is-3">Performance Comparisons</h2>
+          <h2 class="title is-3 has-text-centered">Results</h2>
+          <h3 class="title is-4">Performance Comparisons</h3>
 
           <div class="content has-text-justified">
+
             <p>
-              When we train all methods using 10 demonstrations, VoxAct-B outperforms all baselines by a large margin.
-              In
-              a low-data regime, methods that use a discretized action space, such as VoxAct-B and Bimanual PerActs,
-              tend
-              to outperform methods that use joint-space control (ACT and Diffusion Policy).
-              We hypothesize that discretized action space with spatial equivariance properties may be more
-              sample-efficient and easier for learning-based methods to learn given limited data compared to methods
-              that operate in the joint space.
-            </p>
-            <br />
-            <p>
+              With 10 training demonstrations, VoxAct-B outperforms all baselines by a large margin.
               When we train all methods using more demonstrations (100), VoxAct-B still outperforms baselines on most
               tasks, except ACT for <span style="font-family: monospace;">Put Item in Drawer</span>.
-              Qualitatively, baseline methods typically struggle with precisely grasping objects, such as drawer handles
-              and jars. The baselines also struggle with correctly
-              assigning the roles of each arm. For instance, a policy intended to execute acting actions may
-              unpredictably produce stabilizing actions. Furthermore, they can generate kinematically infeasible actions
-              or actions that lead to erratic movements, as seen in ACT and Diffusion Policy, which may be caused by
-              insufficient training data.
+              Qualitatively, baseline methods, especially VoxPoser, typically struggle with precisely grasping objects
+              such as drawer handles and jars. The baselines also struggle with correctly assigning the roles of each
+              arm. For instance, a policy intended to execute acting actions may unpredictably produce stabilizing
+              actions. Furthermore, they can generate kinematically infeasible actions or actions that lead to erratic
+              movements, as seen in ACT and Diffusion Policy, which may be caused by insufficient training data.
               In contrast, we observe fewer of these errors with VoxAct-B.
             </p>
           </div>
-          <img class="center" src="./static/images/results.png" alt="Results">
-          <p>
-            <center>Performance of different methods on our bimanual manipulation tasks in simulation, based on 10 or
-              100 (task-specific) training demonstrations. We consider 3 training seeds for all methods, and evaluate on
-              the
-              same 25 episodes of unseen test data using the best checkpoints from validation. The
-              results
-              are the average evaluation over 3 seeds. We only test Bimanual Peracts with 10 demonstrations (not 100)
-              due
-              to computational constraints. VoxPoser does not have training, so its 10 and 100 results are identical.
-            </center>
-          </p>
+
+          <div class="columns is-centered">
+            <div class="column is-two-thirds">
+              <img class="center" src="./static/images/results.png" alt="Results">
+              <p>
+                <center>Performance of different methods on our bimanual manipulation tasks in simulation, based on 10
+                  or 100 (task-specific) training demonstrations.
+                </center>
+              </p>
+            </div>
+          </div>
+
+          <h3 class="title is-4">Successful Task Demonstrations</h3>
+
+
+          <h4 class="title is-5 collapsible" onclick="toggleCollapse(this)">
+            <span style="font-family: monospace;">Open Drawer</span>
+          </h4>
+          <div class="clp_content">
+            <div class="columns">
+
+              <div class="column is-one-third">
+                <div class="publication-video">
+                  <video controls muted height="100%">
+                    <source src="./static/videos/simulation_open_drawer_success.webm" type="video/webm">
+                  </video>
+                </div>
+              </div>
+
+              <div class="column is-one-third">
+                <div class="publication-video">
+                  <video controls muted height="100%">
+                    <source src="./static/videos/simulation_open_drawer_success_2.webm" type="video/webm">
+                  </video>
+                </div>
+              </div>
+
+
+              <div class="column is-one-third">
+                <div class="publication-video">
+                  <video controls muted height="100%">
+                    <source src="./static/videos/real_open_drawer_success_speedup.webm" type="video/webm">
+                  </video>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+
+          <h4 class="title is-5 collapsible" onclick="toggleCollapse(this)">
+            <span style="font-family: monospace;">Open Jar</span>
+          </h4>
+          <div class="clp_content">
+            <div class="columns">
+
+              <div class="column is-one-third">
+                <div class="publication-video">
+                  <video controls muted height="100%">
+                    <source src="./static/videos/simulation_open_jar_success.webm" type="video/webm">
+                  </video>
+                </div>
+              </div>
+
+              <div class="column is-one-third">
+                <div class="publication-video">
+                  <video controls muted height="100%">
+                    <source src="./static/videos/simulation_open_jar_success_2.webm" type="video/webm">
+                  </video>
+                </div>
+              </div>
+
+
+              <div class="column is-one-third">
+                <div class="publication-video">
+                  <video controls muted height="100%">
+                    <source src="./static/videos/real_open_jar_success_speedup.webm" type="video/webm">
+                  </video>
+                </div>
+              </div>
+
+
+
+
+            </div>
+
+          </div>
+
+
+
+          <h4 class="title is-5 collapsible" onclick="toggleCollapse(this)">
+            <span style="font-family: monospace;">Put Item in Drawer</span>
+          </h4>
+          <div class="clp_content">
+            <div class="columns">
+
+              <div class="column is-one-third">
+                <div class="publication-video">
+                  <video controls muted height="100%">
+                    <source src="./static/videos/simulation_put_item_in_drawer_success.webm" type="video/webm">
+                  </video>
+                </div>
+              </div>
+
+              <div class="column is-one-third">
+                <div class="publication-video">
+                  <video controls muted height="100%">
+                    <source src="./static/videos/simulation_put_item_in_drawer_success_2.webm" type="video/webm">
+                  </video>
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
+
 
         </div>
       </div>
-    </div>
   </section>
 
   <!-- <section class="section" id="Acknowledgements">
@@ -293,8 +389,9 @@
 
 
   <section class="section" id="Failures">
+
     <div class="container is-max-desktop content">
-      <h2 class="title">Failures</h2>
+      <h2 class="title has-text-centered">Failures</h2>
 
       <div class="columns">
 
@@ -349,7 +446,7 @@
 
       </div>
 
-
+    </div>
 
 
   </section>
