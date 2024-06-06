@@ -3,11 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-    content="VoxAct-B: Vision-Language Models and Voxel Representations for Bimanual Manipulation">
+  <meta name="description" content="VoxAct-B: Voxel-Based Acting and Stabilizing Policy for Bimanual Manipulation">
   <meta name="keywords" content="Imitation from Observation, Learning from Demonstration">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>VoxAct-B: Vision-Language Models and Voxel Representations for Bimanual Manipulation</title>
+  <title>VoxAct-B: Voxel-Based Acting and Stabilizing Policy for Bimanual Manipulation</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -32,8 +31,8 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">VoxAct-B: Vision-Language Models and Voxel Representations
-              for Bimanual Manipulation</h1>
+            <h1 class="title is-1 publication-title">VoxAct-B: Voxel-Based Acting and Stabilizing Policy for Bimanual
+              Manipulation</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block"><b>Anonymous Author(s)</b></span>
             </div>
@@ -149,16 +148,15 @@
             <p>
               Bimanual manipulation is critical to many robotics applications. In contrast to single-arm manipulation,
               bimanual manipulation tasks are challenging due to higher-dimensional action spaces. Prior works leverage
-              large amounts of data and primitive actions to address this problem, but they often suffer from sample
-              inefficiency and limited generalization capabilities across various tasks.
+              large amounts of data and primitive actions to address this problem, but may suffer from sample
+              inefficiency and limited generalization across various tasks.
               To this end, we propose VoxAct-B, a language-conditioned, voxel-based method that leverages Vision
-              Language
-              Models (VLMs) to prioritize key regions within the scene and subsequently reconstruct a voxel grid.
-              We provide this voxel grid to our bimanual manipulation policy to learn acting and stabilizing actions.
-              This approach enables more efficient policy learning from voxels and is generalizable to different tasks.
-              In simulation, we show that VoxAct-B greatly outperforms ACT, Diffusion Policy, and VoxPoser on
-              fine-grained bimanual manipulation tasks. Furthermore, we demonstrate VoxAct-B on real-world <span
-                style="font-family: monospace;">Open Drawer</span> and <span style="font-family: monospace;">Open
+              Language Models (VLMs) to prioritize key regions within the scene and reconstruct a voxel grid. We provide
+              this voxel grid to our bimanual manipulation policy to learn acting and stabilizing actions. This approach
+              enables more efficient policy learning from voxels and is generalizable to different tasks. In simulation,
+              we show that VoxAct-B outperforms strong baselines on fine-grained bimanual manipulation tasks.
+              Furthermore, we demonstrate VoxAct-B on real-world <span style="font-family: monospace;">Open
+                Drawer</span> and <span style="font-family: monospace;">Open
                 Jar</span> tasks using two UR5s.
             </p>
 
@@ -175,7 +173,8 @@
           <br />
           <img src="./static/images/figure2_v2.png" alt="VoxAct-B schematic">
           <p>
-            <center>VoxAct-B uses voxel representations and language for 6-DoF bimanual manipulation.</center>
+            <center>VoxAct-B uses voxel representations and language to perform bimanual manipulation with 6-DoF
+              manipulation from both arms.</center>
           </p>
           <br />
           <p>
@@ -187,35 +186,30 @@
             Asymmetric
             tasks are common in household and industrial settings, such as cutting food, opening bottles, and packaging
             boxes. They typically require two-hand coordination and high-precision, fine-grained manipulation, which are
-            challenging for current robotic manipulation systems. Designing a bimanual manipulation policy is nontrivial
-            due to the high dimensional action space and the need to avoid arm-arm collisions. To tackle this problem,
-            some methods train policies on large datasets, and some exploit primitive
-            actions.
-            However, they are generally sample inefficient, and using primitives can hinder generalization to different
-            tasks.
+            challenging for current robotic manipulation systems. To tackle bimanual manipulation, some methods train
+            policies on large datasets, and some exploit primitive actions. However, they
+            are generally sample inefficient, and using primitives can hinder generalization to different tasks.
           </p>
           <br />
           <p>
             To this end, we propose VoxAct-B, a novel voxel-based, language-conditioned method for bimanual
-            manipulation.
-            Voxel representations, when coupled with discretized action spaces, can increase sample efficiency and
-            generalization by introducing spatial equivariance into a learned system, where transformations of the input
-            lead to corresponding transformations of the output.
-            However, processing voxel representations is computationally demanding. To address
-            this, we propose utilizing Vision-Language Models (VLMs) to focus on the most pertinent regions within the
-            voxel grid by cropping out less relevant regions.
-            This substantially reduces the overall grid size, which then enables a slight increase in voxel resolution
-            in a limited region of the state space without incurring significant computational costs.
+            manipulation. Voxel representations, when coupled with discretized action spaces, can increase sample
+            efficiency and generalization by introducing spatial equivariance into a learned system, where
+            transformations of the input lead to corresponding transformations of the output. However, processing
+            voxels is computationally demanding. To address this, we propose utilizing VLMs to focus on the
+            most pertinent regions within the scene by cropping out less relevant regions. This substantially reduces
+            the overall physical dimensions of the areas used to construct a voxel grid, enabling an increase in voxel
+            resolution without incurring computational costs. To our knowledge, this is the first study to apply voxel
+            representations in bimanual manipulation.
           </p>
           <br />
           <p>
             We also employ language instructions and VLMs to determine the roles of each arm: whether they are
             <em>acting</em> or <em>stabilizing</em>. For instance, in a drawer-opening task, the orientation of the
-            drawer
-            and the position of the handle affect which arm is more suitable for opening the drawer (acting) and which
-            is better for holding it steady (stabilizing). We use VLMs to compute the pose of the object of interest
-            relative to the two robot arms, and to decide the roles of each arm. Then, we provide appropriate language
-            instructions to a policy to control the acting and stabilizing arms.
+            drawer and the position of the handle affect which arm is more suitable for opening the drawer (acting) and
+            which is better for holding it steady (stabilizing). We use VLMs to compute the pose of the object of
+            interest relative to the front camera and to decide the roles of each arm. Then, we provide appropriate
+            language instructions to the bimanual manipulation policy to control the acting and stabilizing arms.
           </p>
         </div>
       </div>
