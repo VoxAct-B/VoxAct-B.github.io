@@ -17,7 +17,6 @@
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.ico">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -47,15 +46,15 @@
               <div class="publication-links">
                 <!-- PDF Link. -->
                 <span class="link-block">
-                  <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
-                    <span>Paper</span>
+                    <span>Paper (coming soon)</span>
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
@@ -74,8 +73,7 @@
               </span> -->
                 <!-- Code Link. -->
                 <span class="link-block">
-                  <a href="" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
@@ -103,77 +101,59 @@
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <!-- Video in the future -->
-        <img id="teaser" src="./static/images/figure1_v04.png" alt="Figure 1">
-        <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
-          <source src="./static/videos/hero.mp4" type="video/mp4">
-        </video> -->
+        <img id="teaser" src="./static/images/figure1_v04.png" alt="Teaser">
         <!-- <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2> -->
+          VoxAct-B uses voxel representations and language to perform bimanual manipulation with full 6-DoF manipulation
+          from both arms.
+        </h2> -->
       </div>
     </div>
   </section>
 
 
-  <!-- <section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+
+          <div class="item">
+            <video poster autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/real_open_drawer_success_speedup.webm" type="video/webm">
+            </video>
+          </div>
+
+          <div class="item">
+            <video poster autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/real_open_jar_success_speedup.webm" type="video/webm">
+            </video>
+          </div>
+
+
+          <div class="item">
+            <video poster="" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/simulation_open_drawer_success.webm" type="video/webm">
+            </video>
+          </div>
+
+
+          <div class="item">
+            <video poster="" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/simulation_open_jar_success.webm" type="video/webm">
+            </video>
+          </div>
+
+
+          <div class="item">
+            <video poster="" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/simulation_put_item_in_drawer_success.webm" type="video/webm">
+            </video>
+          </div>
+
+
         </div>
       </div>
     </div>
-  </div>
-</section> -->
+  </section>
 
 
   <section class="section">
@@ -184,18 +164,20 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Bimanual manipulation is critical to many robotics applications.
-              In contrast to single-arm manipulation, bimanual manipulation tasks is challenging due to
-              higher-dimensional action spaces.
-              Prior works leverage large amounts of data and primitive actions to address this problem.
-              However, they do not scale up and generalize well to multiple tasks.
-              To this end, we propose leveraging large language models (LLMs) to enable a more generalized policy and
-              learning from voxels for efficient policy learning.
-              We use LLMs to navigate free space and utilize voxel-based behavior cloning for contact-rich manipulation.
-              We evaluate the proposed method on an open jar task built in RLBench and compare it against three
-              baselines and ablations.
-              The results show that the proposed method outperforms the baselines by a significant margin.
-              Code, data, prompts, and videos will be available at
+              Bimanual manipulation is critical to many robotics applications. In contrast to single-arm manipulation,
+              bimanual manipulation tasks are challenging due to higher-dimensional action spaces. Prior works leverage
+              large amounts of data and primitive actions to address this problem, but they often suffer from sample
+              inefficiency and limited generalization capabilities across various tasks.
+              To this end, we propose VoxAct-B, a language-conditioned, voxel-based method that leverages Vision
+              Language
+              Models (VLMs) to prioritize key regions within the scene and subsequently reconstruct a voxel grid.
+              We provide this voxel grid to our bimanual manipulation policy to learn acting and stabilizing actions.
+              This approach enables more efficient policy learning from voxels and is generalizable to different tasks.
+              In simulation, we show that VoxAct-B greatly outperforms ACT, Diffusion Policy, and VoxPoser on
+              fine-grained bimanual manipulation tasks. Furthermore, we demonstrate VoxAct-B on real-world <span
+                style="font-family: monospace;">Open
+                Drawer</span> and <span style="font-family: monospace;">Open
+                Jar</span> tasks using two UR5s.
             </p>
 
           </div>
@@ -204,17 +186,15 @@
       <!--/ Abstract. -->
 
       <!-- Paper video. -->
-      <div class="columns is-centered has-text-centered">
+      <!-- <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Video</h2>
           <div class="publication-video">
             <p style="font-size: 36pt;"><b>We need a video here</b></p>
-            <!-- <iframe src="https://www.youtube.com/embed/y7IM83ASzvQ?si=munU7x2ALzU0fzhM" frameborder="0"
-              allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
           </div>
         </div>
-      </div>
-      <!--/ Paper video. -->
+      </div> -->
+
 
       <!-- Overview. -->
       <br />
@@ -224,45 +204,47 @@
           <br />
           <img src="./static/images/figure2_v2.png" alt="MAIL schematic">
           <p>
-            <center>Overview of VoxAct-B. The inputs consist of RGB-D images, a language goal, and proprioception
-              data. First, the RGB-D images and language goal are fed into VoxPoser to generate code that allows the
-              robot arms to navigate through free space and reach a region close to the object of interest. Next, a
-              zoomed-in,
-              upsampled voxel grid of the target object, language goal, and proprioception data are fed into PerAct to
-              perform
-              contact-rich manipulation.</center>
+            <center>VoxAct-B uses voxel representations and language for 6-DoF bimanual manipulation.</center>
           </p>
           <br />
           <p>
-            Bimanual manipulation is essential for robotics tasks, such as when objects are too large to be
-            controlled by one gripper, or when manipulation requires one arm to stabilize the object of interest
-            to make it simpler for the other arm. Designing a bimanual manipulation policy is challenging due
-            to the high dimensionality of the action space. To tackle this problem, some methods train
-            policies on large datasets, and some exploit primitive actions. However, they tend
-            to struggle with generalization to multiple tasks.
+            Bimanual manipulation is essential for robotics tasks, such as when objects are too large to be controlled
+            by one gripper, or when one arm stabilizes an object of interest to make it simpler for the other arm to
+            manipulate.
+            In this work, we focus on asymmetric bimanual manipulation. Here, "asymmetry" refers to the functions of
+            the two arms, where one is a <em>stabilizing</em> arm, while the other is the <em>acting</em> arm.
+            Asymmetric
+            tasks are common in household and industrial settings, such as cutting food, opening bottles, and packaging
+            boxes. They typically require two-hand coordination and high-precision, fine-grained manipulation, which are
+            challenging for current robotic manipulation systems. Designing a bimanual manipulation policy is nontrivial
+            due to the high dimensional action space and the need to avoid arm-arm collisions. To tackle this problem,
+            some methods train policies on large datasets, and some exploit primitive
+            actions.
+            However, they are generally sample inefficient, and using primitives can hinder generalization to different
+            tasks.
           </p>
           <br />
           <p>
-            In this work, we propose to explore how to leverage voxel representations for bimanual manipu-
-            lation. Voxel representations, when coupled with discretized action spaces, can increase sample
-            efficiency and generalization by introducing spatial equivariance into a learned system, where trans-
-            formations of the input lead to corresponding transformations of the outputs. Specifically, we
-            focus on asymmetric bimanual manipulation. Asymmetry refers
-            to how the left and right arms have different functions. In our tasks, for example, one acts as an
-            assistive arm to support the other arm's action. Asymmetric tasks are common in household and
-            industrial settings, such as cutting food, opening bottles, and packaging boxes. However, these tasks
-            typically require two-hand coordination and high-precision, fine-grained manipulation, which are
-            very challenging for current robotic manipulation systems.
+            To this end, we propose VoxAct-B, a novel voxel-based, language-conditioned method for bimanual
+            manipulation.
+            Voxel representations, when coupled with discretized action spaces, can increase sample efficiency and
+            generalization by introducing spatial equivariance into a learned system, where transformations of the input
+            lead to corresponding transformations of the output.
+            However, processing voxel representations is computationally demanding. To address
+            this, we propose utilizing Vision-Language Models (VLMs) to focus on the most pertinent regions within the
+            voxel grid by cropping out less relevant regions.
+            This substantially reduces the overall grid size, which then enables a slight increase in voxel resolution
+            in a limited region of the state space without incurring significant computational costs.
           </p>
           <br />
           <p>
-            We propose VoxAct-B, a method that leverages the strong reasoning capability and
-            generalization of Large Language Models (LLMs) and Vision Language Models (VLM) for free-
-            space traversal, along with downstream contact-rich manipulation using behavioral cloning. We
-            extend the RLBench benchmark to support bimanual manipulation, and show that VoxAct-B
-            reduces the search space and exploration burden of behavioral cloning, allowing it to better learn
-            contact-rich motions from demonstrations as compared to baselines and ablations. We demonstrate
-            VoxAct-B on multiple simulation tasks and in real using a dual UR5 system.
+            We also employ language instructions and VLMs to determine the roles of each arm: whether they are
+            <em>acting</em> or <em>stabilizing</em>. For instance, in a drawer-opening task, the orientation of the
+            drawer
+            and the position of the handle affect which arm is more suitable for opening the drawer (acting) and which
+            is better for holding it steady (stabilizing). We use VLMs to compute the pose of the object of interest
+            relative to the two robot arms, and to decide the roles of each arm. Then, we provide appropriate language
+            instructions to a policy to control the acting and stabilizing arms.
           </p>
         </div>
       </div>
@@ -272,68 +254,45 @@
       <br />
       <div class="columns is-centered">
         <div class="column is-full-width">
-          <h2 class="title is-3">Results</h2>
+          <h2 class="title is-3">Performance Comparisons</h2>
 
-
-          <h3 class="title is-4">Open Jar</h3>
           <div class="content has-text-justified">
             <p>
-              A jar with a screw-on lid is randomly spawned and scaled from 90% to 100% of
-              the original size within the robot's workspace. The jar's color is also varied to introduce visual
-              diversity. The robot must first grasp the jar with one hand and then use the other hand to unscrew
-              the lid in an anti-clockwise direction until it is completely removed.
+              When we train all methods using 10 demonstrations, VoxAct-B outperforms all baselines by a large margin.
+              In
+              a low-data regime, methods that use a discretized action space, such as VoxAct-B and Bimanual PerActs,
+              tend
+              to outperform methods that use joint-space control (ACT and Diffusion Policy).
+              We hypothesize that discretized action space with spatial equivariance properties may be more
+              sample-efficient and easier for learning-based methods to learn given limited data compared to methods
+              that operate in the joint space.
             </p>
-          </div>
-          <video controls muted height="100%">
-            <source src="./static/videos/open_jar.mp4" type="video/mp4">
-          </video>
-          <br />
-
-          <br />
-          <h3 class="title is-4">Open Drawer</h3>
-          <div class="content has-text-justified">
+            <br />
             <p>
-              The robot needs to hold the drawer with one hand and then open the bottom drawer
-              with the other. The drawer is randomly scaled from 90% to 100% of its original size. Additionally,
-              the rotation of the drawer is randomized between -π/8 and π/8 to add variability and challenge to
-              the task.
+              When we train all methods using more demonstrations (100), VoxAct-B still outperforms baselines on most
+              tasks, except ACT for <span style="font-family: monospace;">Put Item in Drawer</span>.
+              Qualitatively, baseline methods typically struggle with precisely grasping objects, such as drawer handles
+              and jars. The baselines also struggle with correctly
+              assigning the roles of each arm. For instance, a policy intended to execute acting actions may
+              unpredictably produce stabilizing actions. Furthermore, they can generate kinematically infeasible actions
+              or actions that lead to erratic movements, as seen in ACT and Diffusion Policy, which may be caused by
+              insufficient training data.
+              In contrast, we observe fewer of these errors with VoxAct-B.
             </p>
           </div>
-          <video controls muted height="100%">
-            <source src="./static/videos/open_drawer.mp4" type="video/mp4">
-          </video>
-          <br />
+          <img class="center" src="./static/images/results.png" alt="Results">
+          <p>
+            <center>Performance of different methods on our bimanual manipulation tasks in simulation, based on 10 or
+              100 (task-specific) training demonstrations. We consider 3 training seeds for all methods, and evaluate on
+              the
+              same 25 episodes of unseen test data using the best checkpoints from validation. The
+              results
+              are the average evaluation over 3 seeds. We only test Bimanual Peracts with 10 demonstrations (not 100)
+              due
+              to computational constraints. VoxPoser does not have training, so its 10 and 100 results are identical.
+            </center>
+          </p>
 
-          <br />
-          <h3 class="title is-4">Put Item in Drawer</h3>
-          <div class="content has-text-justified">
-            <p>
-              An item is on top of a drawer. Both the drawer and the item are randomly
-              scaled by the same value within the range of 0.9 to 1. The drawer is also randomly rotated. The
-              robot needs to open the top drawer with one hand and place the item inside it with the other hand.
-            </p>
-          </div>
-          <video controls muted height="100%">
-            <source src="./static/videos/put_item_in_drawer.mp4" type="video/mp4">
-          </video>
-          <br />
-
-
-
-          <br />
-          <h3 class="title is-4">Performance Comparisons</h3>
-          <div class="content has-text-justified">
-            <p>
-              For each training run, we used the best model in each seed's training run, and evaluated using 25
-              rollouts across 3 seeds.
-              The results show that both ACT and Diffusion Policy are constrained by the training data.
-              Ours outperforms the baselines by a significant margin.
-              Specifically, the improvements from Two PerActs to
-              ours come from using VoxPoser for navigation through free space and using zoomed-in, upsampled voxel grids
-              for PerAct.
-            </p>
-          </div>
-          <img class="center" src="./static/images/table_success_rate.png" alt="Performance Comparisons">
         </div>
       </div>
     </div>
@@ -344,6 +303,69 @@
       <h2 class="title">Acknowledgements</h2>
     </div>
   </section> -->
+
+
+  <section class="section" id="Failures">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Failures</h2>
+
+      <div class="columns">
+
+        <div class="column is-half">
+          <div class="publication-video">
+            <video controls muted height="100%">
+              <source src="./static/videos/simulation_open_drawer_fail.webm" type="video/webm">
+            </video>
+          </div>
+        </div>
+
+        <div class="column is-half">
+          <div class="publication-video">
+            <video controls muted height="100%">
+              <source src="./static/videos/real_open_drawer_fail_speedup.webm" type="video/webm">
+            </video>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="columns">
+
+        <div class="column is-half">
+          <div class="publication-video">
+            <video controls muted height="100%">
+              <source src="./static/videos/simulation_open_jar_fail.webm" type="video/webm">
+            </video>
+          </div>
+        </div>
+
+        <div class="column is-half">
+          <div class="publication-video">
+            <video controls muted height="100%">
+              <source src="./static/videos/real_open_jar_fail_speedup.webm" type="video/webm">
+            </video>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="columns">
+
+        <div class="column is-half">
+          <div class="publication-video">
+            <video controls muted height="100%">
+              <source src="./static/videos/simulation_put_item_in_drawer_fail.webm" type="video/webm">
+            </video>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+
+  </section>
 
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
