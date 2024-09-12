@@ -905,3 +905,373 @@ objects = ['top drawer handle', 'item']
 # Query: top drawer handle.
 top_drawer_handle = detect('top drawer handle')
 ret_val = top_drawer_handle
+
+
+
+
+
+
+
+
+################### The following prompts are used in Hand Over Item ###################
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "planner" generated code
+## context: "objects = ['cube']"
+########################################
+objects = ['cube']
+# Query: grasp the block with left hand and hand it over to the right hand.
+composer("grasp the cube with left hand")
+composer("move left hand upward for 20cm")
+composer("rotate 90 degrees upward and sideway 90 degrees with left hand")
+composer("rotate right hand 90 degrees upward")
+composer("move right hand down for 40cm")
+composer("grasp the cube with right hand")
+composer("open left hand gripper")
+composer("move right hand forward for 20cm")
+# done
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "composer" generated code
+########################################
+# Query: grasp the cube with left hand.
+movable = parse_query_obj('left hand')
+affordance_map = get_affordance_map('a point at the center of the cube')
+gripper_map = get_gripper_map('open everywhere except 1cm around the cube')
+execute(movable, affordance_map=affordance_map, gripper_map=gripper_map)
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "parse_query_obj" generated code
+## context: "objects = ['cube']"
+########################################
+objects = ['cube']
+# Query: left hand.
+left_hand = detect('left hand')
+ret_val = left_hand
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "get_affordance_map" generated code
+########################################
+# Query: a point at the center of the cube.
+affordance_map = get_empty_affordance_map()
+cube = parse_query_obj('cube')
+x, y, z = cube.position
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "get_gripper_map" generated code
+########################################
+# Query: open everywhere except 1cm around the cube.
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when 1cm around the cube
+cube = parse_query_obj('cube')
+set_voxel_by_radius(gripper_map, cube.position, radius_cm=1, value=0)
+ret_val = gripper_map
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "parse_query_obj" generated code
+## context: "objects = ['cube']"
+########################################
+objects = ['cube']
+# Query: cube.
+cube = detect('cube')
+ret_val = cube
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "parse_query_obj" generated code
+## context: "objects = ['cube']"
+########################################
+objects = ['cube']
+# Query: cube.
+cube = detect('cube')
+ret_val = cube
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "composer" generated code
+########################################
+# Query: move left hand upward for 20cm.
+movable = parse_query_obj('left hand')
+affordance_map = get_affordance_map(f'a point 20cm above {movable.position}')
+execute(movable, affordance_map=affordance_map)
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "parse_query_obj" generated code
+## context: "objects = ['cube']"
+########################################
+objects = ['cube']
+# Query: left hand.
+left_hand = detect('left hand')
+ret_val = left_hand
+
+
+*** OpenAI API call took 1.22s ***
+########################################
+## "get_affordance_map" generated code
+########################################
+# Query: a point 20cm above [63 44  4].
+affordance_map = get_empty_affordance_map()
+x = 63
+y = 44
+z = cm2index(4, 'z') + 20
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "composer" generated code
+########################################
+# Query: rotate 90 degrees upward and sideway 90 degrees with left hand.
+movable = parse_query_obj('left hand')
+rotation_map = get_rotation_map('rotate 90 degrees upward and sideway 90 degrees with left hand')
+execute(movable, rotation_map=rotation_map)
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "parse_query_obj" generated code
+## context: "objects = ['cube']"
+########################################
+objects = ['cube']
+# Query: left hand.
+left_hand = detect('left hand')
+ret_val = left_hand
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "get_rotation_map" generated code
+########################################
+# Query: rotate 90 degrees upward and sideway 90 degrees with left hand.
+rotation_map = get_empty_rotation_map()
+curr_rotation = rotation_map[0, 0, 0]
+rotation_delta = euler2quat(-np.radians(90), 0, np.radians(90))
+rotation_map[:, :, :] = qmult(curr_rotation, rotation_delta)
+ret_val = rotation_map
+
+
+[interfaces.py | 23:32:47] finished executing path via controller
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "composer" generated code
+########################################
+# Query: rotate right hand 90 degrees upward.
+movable = parse_query_obj('right hand')
+rotation_map = get_rotation_map('rotate 90 degrees upward')
+execute(movable, rotation_map=rotation_map)
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "parse_query_obj" generated code
+## context: "objects = ['cube']"
+########################################
+objects = ['cube']
+# Query: right hand.
+right_hand = detect('right hand')
+ret_val = right_hand
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "get_rotation_map" generated code
+########################################
+# Query: rotate 90 degrees upward.
+rotation_map = get_empty_rotation_map()
+curr_rotation = rotation_map[0, 0, 0]
+rotation_delta = euler2quat(0, -np.radians(90), 0)
+rotation_map[:, :, :] = qmult(curr_rotation, rotation_delta)
+ret_val = rotation_map
+
+
+[interfaces.py | 23:32:53] finished executing path via controller
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "composer" generated code
+########################################
+# Query: move right hand down for 40cm.
+movable = parse_query_obj('right hand')
+affordance_map = get_affordance_map(f'a point 40cm below {movable.position}')
+execute(movable, affordance_map=affordance_map)
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "parse_query_obj" generated code
+## context: "objects = ['cube']"
+########################################
+objects = ['cube']
+# Query: right hand.
+right_hand = detect('right hand')
+ret_val = right_hand
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "get_affordance_map" generated code
+########################################
+# Query: a point 40cm below [52 49 71].
+affordance_map = get_empty_affordance_map()
+x = 52
+y = 49
+z = cm2index(71, 'z') - 40
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "composer" generated code
+########################################
+# Query: grasp the cube with right hand.
+movable = parse_query_obj('right hand')
+affordance_map = get_affordance_map('a point at the center of the cube')
+gripper_map = get_gripper_map('open everywhere except 1cm around the cube')
+execute(movable, affordance_map=affordance_map, gripper_map=gripper_map)
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "parse_query_obj" generated code
+## context: "objects = ['cube']"
+########################################
+objects = ['cube']
+# Query: right hand.
+right_hand = detect('right hand')
+ret_val = right_hand
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "get_affordance_map" generated code
+########################################
+# Query: a point at the center of the cube.
+affordance_map = get_empty_affordance_map()
+cube = parse_query_obj('cube')
+x, y, z = cube.position
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "get_gripper_map" generated code
+########################################
+# Query: open everywhere except 1cm around the cube.
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+# close when 1cm around the cube
+cube = parse_query_obj('cube')
+set_voxel_by_radius(gripper_map, cube.position, radius_cm=1, value=0)
+ret_val = gripper_map
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "parse_query_obj" generated code
+## context: "objects = ['cube']"
+########################################
+objects = ['cube']
+# Query: cube.
+cube = detect('cube')
+ret_val = cube
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "parse_query_obj" generated code
+## context: "objects = ['cube']"
+########################################
+objects = ['cube']
+# Query: cube.
+cube = detect('cube')
+ret_val = cube
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "composer" generated code
+########################################
+# Query: open left hand gripper.
+movable = parse_query_obj('left hand')
+gripper_map = get_gripper_map('open everywhere')
+execute(movable, gripper_map=gripper_map)
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "parse_query_obj" generated code
+## context: "objects = ['cube']"
+########################################
+objects = ['cube']
+# Query: left hand.
+left_hand = detect('left hand')
+ret_val = left_hand
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "get_gripper_map" generated code
+########################################
+# Query: open everywhere.
+gripper_map = get_empty_gripper_map()
+# open everywhere
+gripper_map[:, :, :] = 1
+ret_val = gripper_map
+
+
+[interfaces.py | 23:33:35] finished executing path via controller
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "composer" generated code
+########################################
+# Query: move right hand forward for 20cm.
+movable = parse_query_obj('right hand')
+affordance_map = get_affordance_map(f'a point 20cm in front of {movable.position}')
+execute(movable, affordance_map)
+
+
+(using cache) *** OpenAI API call took 0.00s ***
+########################################
+## "parse_query_obj" generated code
+## context: "objects = ['cube']"
+########################################
+objects = ['cube']
+# Query: right hand.
+right_hand = detect('right hand')
+ret_val = right_hand
+
+
+*** OpenAI API call took 1.17s ***
+########################################
+## "get_affordance_map" generated code
+########################################
+# Query: a point 20cm in front of [59 45  4].
+affordance_map = get_empty_affordance_map()
+# 20cm in front of so we subtract from x-axis
+x = cm2index(59, 'x') - 20
+y = 45
+z = 4
+affordance_map[x, y, z] = 1
+ret_val = affordance_map
