@@ -90,7 +90,7 @@
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <img id="teaser" src="./static/images/figure1_v06.png" alt="Teaser">
+        <img id="teaser" src="./static/images/figure1_v08.png" alt="Teaser">
         <!-- <h2 class="subtitle has-text-centered">
           VoxAct-B uses voxel representations and language to perform bimanual manipulation with full 6-DoF manipulation
           from both arms.
@@ -112,17 +112,10 @@
           </div>
 
           <div class="item">
-            <video poster autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/real_open_drawer_success_speedup.mp4" type="video/mp4">
+            <video poster="" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/rebuttal/hand_over_item_w170000_s16_succ.mp4" type="video/mp4">
             </video>
           </div>
-
-          <div class="item">
-            <video poster autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/real_open_jar_success_speedup.mp4" type="video/mp4">
-            </video>
-          </div>
-
 
           <div class="item">
             <video poster="" autoplay controls muted loop playsinline height="100%">
@@ -144,7 +137,18 @@
             </video>
           </div>
 
+          <div class="item">
+            <video poster autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/real_open_drawer_success_speedup.mp4" type="video/mp4">
+            </video>
+          </div>
 
+          <div class="item">
+            <video poster autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/real_open_jar_success_speedup.mp4" type="video/mp4">
+            </video>
+          </div>
+          
         </div>
       </div>
     </div>
@@ -177,7 +181,7 @@
         </div>
       </div>
 
-      <div class="columns is-centered">
+      <!-- <div class="columns is-centered">
         <div class="column is-full-width">
           <h2 class="title is-3">Videos</h2>
           <video controls>
@@ -187,7 +191,7 @@
             <source src="./static/videos/rebuttal/2024_06_17_open_jar_acting_stabilizing_final_v2.mp4" type="video/mp4">
           </video>
         </div>
-      </div>
+      </div> -->
 
 
 
@@ -252,8 +256,7 @@
 
             <p>
               With 10 training demonstrations, VoxAct-B outperforms all baselines by a large margin.
-              When we train all methods using more demonstrations (100), VoxAct-B still outperforms baselines on most
-              tasks, except ACT for <span style="font-family: monospace;">Put Item in Drawer</span>.
+              When we train all methods using more demonstrations (100), VoxAct-B still outperforms all baselines.
               Qualitatively, baseline methods, especially VoxPoser, typically struggle with precisely grasping objects
               such as drawer handles and jars. The baselines also struggle with correctly assigning the roles of each
               arm. For instance, a policy intended to execute acting actions may unpredictably produce stabilizing
@@ -269,6 +272,30 @@
               <p>
                 <center>Performance of different methods on our bimanual manipulation tasks in simulation, based on 10
                   or 100 (task-specific) training demonstrations.
+                </center>
+              </p>
+            </div>
+          </div>
+
+          <h3 class="title is-4">Multi-Task Experiment</h3>
+
+          <div class="content has-text-justified">
+
+            <p>
+              We train a single policy of ACT and VoxAct-B on <span style="font-family: monospace;">Open
+              Jar</span>, <span style="font-family: monospace;">Open Drawer</span>, and <span style="font-family: monospace;">Put Item in Drawer</span>, 
+              with 10 demonstrations for each task. For evaluation, both methods use the checkpoint 
+              with the best average validation success rate across all tasks. 
+              We use the same validation and test data as the baseline comparison.
+            </p>
+          </div>
+
+          <div class="columns is-centered">
+            <div class="column is-two-thirds">
+              <img class="center" src="./static/images/multitask_results.png" alt="Multi-task results">
+              <p>
+                <center>Multi-task results of ACT and VoxAct-B trained on 10 demonstrations of 
+                  each task and evaluated across three training seeds.
                 </center>
               </p>
             </div>
